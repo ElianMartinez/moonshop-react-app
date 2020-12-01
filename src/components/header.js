@@ -1,5 +1,5 @@
 import "./header.css";
-import Background from "./image-fondo.png";
+import Background from "./img/image-fondo.png";
 import Nav from "./nav";
 
 const Header = (props) => {

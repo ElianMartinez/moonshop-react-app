@@ -1,5 +1,5 @@
 import "./nav.css";
-import react, { useState } from "react";
+import { useState } from "react";
 import Options from "./options";
 
 function Nav() {
@@ -51,7 +51,7 @@ function Nav() {
               </a>
             </li>
 
-            <li className={`nav-item ${ optios != false ?  'rotar' : ''}`}>
+            <li className={`nav-item ${optios != false ? "rotar" : ""}`}>
               <a
                 onClick={() => setOptios(!optios)}
                 className="nav-link"

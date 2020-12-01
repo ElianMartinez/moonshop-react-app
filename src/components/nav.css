@@ -27,10 +27,10 @@
     .nav-item{
         margin-left: 20px;
     }
-    
-}
-.rotar{
+    .rotar{
   
-    transform: rotate(90deg);
-
+        transform: rotateZ(90deg);
+    
+    }
+    
 }
