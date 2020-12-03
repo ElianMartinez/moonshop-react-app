@@ -1,0 +1,19 @@
+.loaderForm{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgba(127, 127, 226, 0.246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loaderForm img{
+    width: 100px;
+}
+
+.activar{
+    display: hidden;
+    display: none;
+}

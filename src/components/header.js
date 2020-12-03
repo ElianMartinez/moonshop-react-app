@@ -5,10 +5,10 @@ import Nav from "./nav";
 const Header = (props) => {
   return (
     <header style={{ backgroundImage: `url(${Background})` }}>
-      <div class="opacar"></div>
+      <div className="opacar"></div>
       <Nav></Nav>
-      <div class="botones">
-        <div class="boton">
+      <div className="botones">
+        <div className="boton">
           <svg
             width="18"
             height="31"
@@ -22,7 +22,7 @@ const Header = (props) => {
             />
           </svg>
         </div>
-        <div class="boton">
+        <div className="boton">
           <svg
             width="20"
             height="31"

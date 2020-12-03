@@ -8,8 +8,8 @@ class App extends react.Component {
   render() {
     return (
       <>
-        <Header />
-        <Main />
+        {/* <Header />
+        <Main /> */}
         <AddProduct />
       </>
     );
