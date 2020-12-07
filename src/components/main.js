@@ -2,7 +2,11 @@ import "./main.css";
 import ProductHome from "./Product-home";
 
 const Main = () => {
-  return <ProductHome />;
+  return 
+  <>
+  <ProductHome />
+  </>
+
 };
 
 export default Main;

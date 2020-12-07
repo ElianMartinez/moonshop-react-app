@@ -7,7 +7,9 @@ const ItemTable = (props) => {
         <th scope="row">RD${props.datos.price}</th>
         <td>{props.datos.discont}</td>
         <td>{props.datos.mode}</td>
-        <td>{props.datos.img}</td>
+        <td>
+          <img src={props.datos.img} width="200px" alt="" />
+        </td>
         <td>{props.datos.shopping}</td>
       </tr>
     </>

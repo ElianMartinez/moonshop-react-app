@@ -1,6 +1,6 @@
 import "./config/firebase";
 import { useEffect, useState } from "react";
-import { db } from "./config/firebase";
+import { fstorage, db } from "./config/firebase";
 import loaderimg from "./loader.gif";
 import ItemTable from "./components/item-table";
 
@@ -15,6 +15,7 @@ const AddProduct = () => {
     "playa",
     "falda",
     "interior",
+    "smoking",
   ];
 
   const initialstatevalues = {
@@ -31,8 +32,6 @@ const AddProduct = () => {
   const [loader, setloader] = useState(false);
   const [products, setProducts] = useState([]);
   const [valueUpload, setvalueUpload] = useState(0);
-
-  
 
   useEffect(() => {
     getProducts();
@@ -59,8 +58,33 @@ const AddProduct = () => {
       shopping: values.shopping,
     };
     const file = e.target.files[0];
-    tmp.img = file.name;
-    setValues(tmp);
+
+    if (file.type === "image/png") {
+      // Subida de imagen a firebase
+      let storageRef = fstorage.ref("/imgProduct/" + file.name);
+      let task = storageRef.put(file);
+
+      task.on(
+        "state_changed",
+        (snapshot) => {
+          let percentage =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setvalueUpload(percentage);
+        },
+        (error) => {
+          console.log(error.message);
+        },
+        () => {
+          setvalueUpload(100);
+          storageRef.getDownloadURL().then(function (url) {
+            tmp.img = url;
+            setValues(tmp);
+          });
+        }
+      );
+    } else {
+      alert("no es png");
+    }
   };
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -74,6 +98,7 @@ const AddProduct = () => {
       await db.collection("products").doc().set(values);
       setloader(false);
       setValues(initialstatevalues);
+      document.getElementById("form").reset();
     } catch (error) {
       console.log(error);
       setloader(false);
@@ -86,7 +111,7 @@ const AddProduct = () => {
         <img src={loaderimg} alt="" />
       </div>
 
-      <form onSubmit={handleSubmit} className="container pt-5">
+      <form onSubmit={handleSubmit} id="form" className="container  pt-5">
         <div className="row">
           <div className="form-group col-xs-12 col-md-8">
             <label htmlFor="inputName">Nombre del Producto</label>
@@ -162,7 +187,7 @@ const AddProduct = () => {
             </select>
           </div>
         </div>
-
+        <p> esta es la imagen: {values.img}</p>
         <div className="row">
           <div className="form-group col-md-4">
             <label htmlFor="shopping">Veces comprado</label>
@@ -177,6 +202,7 @@ const AddProduct = () => {
           <div className="form-group col-md-8">
             <label htmlFor="img">Imagen</label>
             <input
+              accept="image/png"
               onChange={handleImg}
               type="file"
               className="form-control"
@@ -184,6 +210,7 @@ const AddProduct = () => {
               required
             />
             <progress value={valueUpload} max="100"></progress>
+            <img src={values.img} width="100px" alt="" />
           </div>
         </div>
         <div className="form-group d-flex justify-content-center">
