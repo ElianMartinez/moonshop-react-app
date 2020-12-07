@@ -2,10 +2,12 @@ import "./main.css";
 import ProductHome from "./Product-home";
 
 const Main = () => {
-  return 
-  <>
+  return (
+  <>  
   <ProductHome />
   </>
+  )
+  
 
 };
 

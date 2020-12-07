@@ -1,5 +1,5 @@
 import Product from "./product";
-import image from "./img/jacket-de-pesca.png";
+import { db } from "../config/firebase";
 import "./productHome.css";
 import { useState } from "react";
 
@@ -41,25 +41,20 @@ const ProductHome = () => {
           className={`row products popular-products ${
             category !== 1 ? "d-none" : ""
           }`}
-        >
-          <Product name="Jean rotos" images={image} price="19.36" />
-        </div>
+        ></div>
         <div
           className={`row products new-products ${
             category !== 2 ? "d-none" : ""
           }`}
-        >
-          <Product name="Jean rotos" images={image} price="19.36" />
-          <Product name="Jean rotos" images={image} price="19.36" />
-        </div>
+        ></div>
         <div
           className={`row products discount-products ${
             category !== 3 ? "d-none" : ""
           }`}
         >
-          <Product name="Jean rotos" images={image} price="19.36" />
-          <Product name="Jean rotos" images={image} price="19.36" />
-          <Product name="Jean rotos" images={image} price="19.36" />
+          {
+            
+          }
         </div>
       </div>
     </>

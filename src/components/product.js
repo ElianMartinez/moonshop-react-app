@@ -4,7 +4,10 @@ const Product = (props) => {
   return (
     <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 product">
       <div className="capa">
-        <div className="add-shopping d-flex justify-content-center pt-3">
+        <div
+          onClick={props.id}
+          className="add-shopping d-flex justify-content-center pt-3"
+        >
           <svg
             className="mr-2"
             width="20"
@@ -40,7 +43,7 @@ const Product = (props) => {
           </svg>
           <p className="">Buy</p>
         </div>
-        <div className="add-boton">
+        <div className="add-boton" onClick={props.id}>
           <svg
             width="25"
             height="25"
@@ -54,7 +57,7 @@ const Product = (props) => {
             />
           </svg>
         </div>
-        <div className="add-boton">
+        <div className="add-boton" onClick={props.id}>
           <svg
             width="25"
             height="25"
