@@ -71,10 +71,16 @@
 
 }
 
+.cont-cantidad button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
 .cont-cantidad{
     margin-left: 13px;
     margin-right: 13px;
-    margin-top: 5px;
+    margin-top: 4px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -83,9 +89,9 @@
 
 }
 
-.cont-cantidad p:nth-child(1)  {
+.cont-cantidad button:nth-child(1)  {
     cursor: pointer;
 }
-.cont-cantidad p:nth-child(3){
+.cont-cantidad button:nth-child(3){
     cursor: pointer;
 }

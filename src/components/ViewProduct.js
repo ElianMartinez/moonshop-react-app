@@ -67,9 +67,21 @@ let ViewProduct = () => {
                   </div>
                   <div className="cantidad ">
                     <div className="cont-cantidad ">
-                      <p>-</p>
-                      <p>{stock}</p>
-                      <p>+</p>
+                      <button
+                        onClick={() => {
+                          setstock(stock > 0 ? stock - 1 : 0);
+                        }}
+                      >
+                        -
+                      </button>
+                      <button>{stock}</button>
+                      <button
+                        onClick={() => {
+                          setstock(stock + 1);
+                        }}
+                      >
+                        +
+                      </button>
                     </div>
                   </div>
                 </div>
