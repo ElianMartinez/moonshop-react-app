@@ -2,7 +2,7 @@ import "./product.css";
 
 const Product = (props) => {
   return (
-    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 product">
+    <div className="col-xs-12 col-sm-12 col-md-6 col-lg-3  product">
       <div className="capa">
         <div
           onClick={props.id}
@@ -43,7 +43,7 @@ const Product = (props) => {
           </svg>
           <p className="">Buy</p>
         </div>
-        <div className="add-boton" onClick={props.id}>
+        <div className="add-boton">
           <svg
             width="25"
             height="25"
@@ -57,7 +57,7 @@ const Product = (props) => {
             />
           </svg>
         </div>
-        <div className="add-boton" onClick={props.id}>
+        <div className="add-boton">
           <svg
             width="25"
             height="25"
@@ -80,8 +80,10 @@ const Product = (props) => {
         <img src={props.images} alt="ropa" />
       </div>
       <br />
-      <p className="nombre">{props.name}</p>
-      <p className="precio">RD$ {props.price}</p>
+    <br/><br/>
+        <p className="nombre">{props.name}</p>
+        <p className="precio">RD$ {props.price}</p>
+    
     </div>
   );
 };

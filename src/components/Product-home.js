@@ -1,10 +1,62 @@
 import Product from "./product";
 import { db } from "../config/firebase";
 import "./productHome.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProductHome = () => {
   const [category, setcategory] = useState(1);
+  const [produts, setprodutsPopular] = useState([]);
+  const [news, setnews] = useState([]);
+  const [discount, setdiscount] = useState([]);
+
+  let getPopular = () => {
+    let dato = [];
+    db.collection("products")
+      .where("shopping", ">=", "6")
+      .orderBy("shopping", "desc")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          dato.push({ ...doc.data(), id: doc.id });
+        });
+      });
+    setprodutsPopular(dato);
+  };
+
+  let getNew = () => {
+    let dato = [];
+    db.collection("products")
+      .where("shopping", "<=", "3")
+      .orderBy("shopping", "asc")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          dato.push({ ...doc.data(), id: doc.id });
+        });
+      });
+    setnews(dato);
+  };
+
+  let getdiscount = () => {
+    let dato = [];
+    db.collection("products")
+      .where("discont", ">=", "1")
+      .orderBy("discont", "asc")
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          dato.push({ ...doc.data(), id: doc.id });
+        });
+      });
+    setdiscount(dato);
+  };
+
+  useEffect(() => {
+    getPopular();
+    getNew();
+    getdiscount();
+  }, produts);
+
   return (
     <>
       <div className="container-fluid main">
@@ -41,20 +93,52 @@ const ProductHome = () => {
           className={`row products popular-products ${
             category !== 1 ? "d-none" : ""
           }`}
-        ></div>
+        >
+          {produts.map(function (product) {
+            return (
+              <Product
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                images={product.img}
+                price={product.price}
+              />
+            );
+          })}
+        </div>
         <div
           className={`row products new-products ${
             category !== 2 ? "d-none" : ""
           }`}
-        ></div>
+        >
+          {news.map(function (product) {
+            return (
+              <Product
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                images={product.img}
+                price={product.price}
+              />
+            );
+          })}
+        </div>
         <div
           className={`row products discount-products ${
             category !== 3 ? "d-none" : ""
           }`}
         >
-          {
-            
-          }
+          {discount.map(function (product) {
+            return (
+              <Product
+                key={product.id}
+                id={product.id}
+                name={product.name}
+                images={product.img}
+                price={product.price}
+              />
+            );
+          })}
         </div>
       </div>
     </>

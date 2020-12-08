@@ -2,14 +2,17 @@
 /* products css codigo */
 .product {
     position: relative;
+    
     border-bottom: 1px solid #c7c6c69d;
     border-right: 1px solid #c7c6c69d;
     border-left: 1px solid #c7c6c69d;
 }
 
 .product img {
-    width: 50%;
+    max-width: 200px;
+    max-height: 200px;
 }
+
 
 .notify {
     position: absolute;

@@ -1,6 +1,6 @@
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.061) !important;
+    background-color: var(--color-principar) !important;
     position: relative;
     z-index: 5;
     transition: 0.2s;
