@@ -10,11 +10,26 @@ let ViewProduct = () => {
     "https://firebasestorage.googleapis.com/v0/b/ecoomerce-moonshop.appspot.com/o/imgProduct%2Fblack-t-shit-mockup_125540-430.png?alt=media&token=f5e33266-52e6-4a89-b5e8-23e271d46251";
 
   const [data, setdata] = useState({});
+  const [other, setother] = useState([]);
   const [stock, setstock] = useState(1);
 
   let getData = () => {
+    let datos = [];
     db.collection("products")
       .where("img", "==", idProduct)
+      .get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          datos.push(doc.data());
+        });
+      });
+
+    setother(datos);
+  };
+
+  let getProducts = () => {
+    db.collection("products")
+      .where("category", "==", data.category)
       .get()
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
@@ -25,6 +40,7 @@ let ViewProduct = () => {
 
   useEffect(() => {
     getData();
+    getProducts();
   }, data);
 
   return (
@@ -161,14 +177,9 @@ let ViewProduct = () => {
         </div>
         <div className="container-fluid p-5">
           <div className="row">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            {other.map((obj) => {
+              return <Product image={obj.img} name={obj.name} />;
+            })}
           </div>
         </div>
       </div>
