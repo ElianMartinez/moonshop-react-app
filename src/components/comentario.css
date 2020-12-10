@@ -1,0 +1,16 @@
+.img-round {
+border-radius: 50%;
+background-color: white;
+}
+.name {
+    font-family: 'Poppins';
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.description {
+    font-family: 'Poppins';
+    font-size: 14px;
+    color: rgb(173, 173, 173);
+
+}

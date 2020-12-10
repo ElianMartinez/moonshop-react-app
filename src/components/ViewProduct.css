@@ -1,0 +1,158 @@
+
+.star-img {
+    width: 15px;
+    margin-right: 5px;
+}
+.select-size {
+   margin: 0px;
+   padding: 0px;
+
+}
+.reviw {
+ font-family: 'Oswald';
+ color: rgb(175, 175, 175);
+ font-weight: 320;
+ font-size: 15px;
+ letter-spacing: 1px;
+}   
+ .nombre{
+    font-family: 'Oswald';
+    font-weight: 600;
+
+}
+ .size-area{
+    font-family: 'Oswald';
+    font-weight: 500;
+}
+.select-size p{
+    text-align: center;
+    width: 55px;
+    list-style: none;
+    color: rgb(195, 195, 195);
+    font-family: 'Poppins';
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.select-size .a{
+    color:var(--color-principar);
+}
+
+.select-size p:hover{
+    
+    background-color: rgb(218, 218, 218);
+
+}
+.precio{
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 20px;
+}
+.notification{
+    width: 40px;
+    height: 20px;
+    background-color: black;
+ 
+    margin-left: 30px;
+    color: white;
+}
+.notification p {
+    font-size: 12px;
+}
+
+.cantidad{
+    width: 100px;
+    border-radius: 40px;
+    border: 1px solid;
+    height: 40px;
+    margin-left: 20px;
+    display: flex;
+ 
+
+}
+
+.cont-cantidad button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.cont-cantidad{
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-top: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    font-weight: bold;
+
+}
+
+.cont-cantidad button:nth-child(1)  {
+    cursor: pointer;
+}
+.cont-cantidad button:nth-child(3){
+    cursor: pointer;
+}
+
+.btn-shopping{
+    margin-top: 15px;
+    width: 200px;
+    height:50px;
+    background-color: var(--color-principar);
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+   padding-top: 8px;
+   font-family: 'Poppins';
+   font-size: 12px;
+   color: white;
+   transition: 0.2s;
+   cursor: pointer;
+
+}
+.btn-shopping p {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.btn-shopping:hover {
+    transform: scale(1.1);
+}
+
+.line{
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+.add-list{
+    padding:10px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+    border-radius: 20px;
+}
+.add-list button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: grey;
+    cursor: pointer;
+
+}
+
+.add-list:hover {
+    background-color: rgb(224, 224, 224);
+}
+.cont-img {
+    display: flex;
+    align-items: center;
+}
+
+.img{
+    min-width: 220px;
+}
+
+.comentario-setion{
+    
+    background-color: #f1f1f1;
+}

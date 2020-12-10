@@ -1,0 +1,18 @@
+.select {
+    font-family: "Oswald", sans-serif;
+    color: #8a8a8a;
+    background-color: white;
+    height: 70px;
+    letter-spacing: 1px;
+    align-items: center;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid #c7c6c69d;
+    border-bottom: 1px solid #c7c6c69d;
+    cursor: pointer;
+}
+.row .active {
+    background-color: var(--color-principar);
+    color: white;
+}
