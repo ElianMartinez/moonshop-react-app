@@ -14,11 +14,16 @@ let ViewProduct = ({match}) => {
   const [other, setother] = useState([]);
   const [stock, setstock] = useState(1);
   
-  document.addEventListener('onhaschange' , () => {
-   array1 =  window.location.href('-');
+  let reload = () => {
+   array1 =  window.location.href.split('-');
+   console.log(array1);
    idProduct = array1[1];
    cate = array1[0];
     getData();
+  };
+
+  window.addEventListener('popstate', () => {
+    console.log('hola');
   });
   let getData = () => {
     let array =[];

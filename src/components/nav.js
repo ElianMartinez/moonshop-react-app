@@ -2,7 +2,7 @@ import "./nav.css";
 import { useState } from "react";
 import Options from "./options";
 import img from './img/logo.png'
-
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 function Nav() {
   const [optios, setOptios] = useState(false);
 
@@ -13,10 +13,11 @@ function Nav() {
           optios != false ? "color-fondo" : ""
         } `}
       >
-        <a className="navbar-brand d-md-none" href="#">
+      
+        <a className="navbar-brand d-md-none" href="/">
           <img src={img} alt="Logo" width="150px" />
         </a>
-
+      
         <button
           className="navbar-toggler"
           type="button"
@@ -51,7 +52,6 @@ function Nav() {
                 </svg>
               </a>
             </li>
-
             <li className={`nav-item ${optios != false ? "rotar" : ""}`}>
               <a
                 onClick={() => setOptios(!optios)}
@@ -81,8 +81,7 @@ function Nav() {
               </a>
             </li>
           </ul>
-
-          <a className="navbar-brand d-none d-md-block" href="#">
+          <a className="navbar-brand d-none d-md-block" href="/">
             <img
               className="img-fluid"
               src={img}
@@ -93,7 +92,7 @@ function Nav() {
 
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link" href="/main/login">
                 <svg
                   className="icon persona"
                   width="30"

@@ -1,0 +1,92 @@
+
+.fondo {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.b7{
+    font-family: 'Oswald', sans-serif; font-size: 48 px; color: white; padding: 35px;
+}
+.b8 {
+    color: black; font-family: 'Oswald', sans-serif;
+}
+.b9{
+    width: 250px; height: 50px; margin-left: 500px;
+}
+.main-section{
+margin:0 auto;
+margin-top:25%;
+padding: 0;
+}
+
+
+
+.modal-content{
+background-color:#D285D9;
+
+
+padding: 0 25px;
+box-shadow: 0px 0px 3px #848484;
+}
+.user-img{
+margin-top: -50px;
+margin-bottom: 35px;
+}
+
+.user-img img{
+width: 100xp;
+height: 100px;
+box-shadow: 0px 0px 3px #848484;
+border-radius: 50%;
+}
+
+.form-group input{
+height: 42px;
+font-size: 12px;
+text-align: center;
+border-radius: 25px;
+background-color: #D285D9;
+border-color: white;
+
+
+
+
+}
+.form-group input::placeholder { color: white; font-family: 'Poppins', sans-serif;}
+
+
+.form-group::before{
+font-family: "Oswald";
+position: absolute;
+left: 28px;
+font-size: 22px;
+padding-top:4px;
+
+}
+
+
+
+
+.btn-circle.btn-xl { 
+width: 50px; 
+height: 50px; 
+padding: 5px 4px; 
+border-radius: 35px; 
+font-size: 12px; 
+text-align: center; 
+background-color:#D285D9 ;
+border-color: white;
+
+
+} 
+
+
+.forgot{
+padding: 5px 0;
+}
+
+.forgot a{
+color: white;
+}

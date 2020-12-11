@@ -20,10 +20,10 @@ const Options = () => {
             <div>
               <h4>MUJERES</h4>
               <p>Pantalones</p>
-              <p>Camisa</p>
+              <p>Blusa</p>
               <p>Ropa para Frio</p>
               <p>Ropa para playa</p>
-              <p>Saco</p>
+              <p>Vestidos</p>
               <p>Interior</p>
             </div>
           </div>
